@@ -31,14 +31,7 @@ public class ChatController {
                         """)
                 .call()
                 .entity(Code.class);
-
-
-        System.out.println(code.code());
-        System.out.println(code.test());
-
-        codeService.writeToFile(code.code());
-        codeService.writeToFile(code.test());
-
+        codeService.writeToFile(new String[]{code.code(),code.test()});
         return code;
     }
 
